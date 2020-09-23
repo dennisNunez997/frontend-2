@@ -1,6 +1,6 @@
 export interface Proovedor
 {
-    proveedores:{
+    proveedors:{
         _id ?: string,
         nombre: string
     },

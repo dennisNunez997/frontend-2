@@ -14,7 +14,7 @@ import { Factura } from './Factura';
 export class ClientenodeService {
 
 
-  URL = "https://demonoderestfull.herokuapp.com/api/";
+  URL = "https://app-proyecto-distribuidas.herokuapp.com/api/";
 
 
   constructor(private httpc: HttpClient) { }
@@ -71,12 +71,5 @@ export class ClientenodeService {
     let objetoFactura = {nombre: nombreF}
     return this.httpc.post(this.URL+'factura',objetoFactura);
   }
-
-  
-
-  
-
-  
-
 
 }

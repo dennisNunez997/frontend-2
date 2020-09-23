@@ -14,19 +14,28 @@ export class ClienteComponent implements OnInit {
   clientes: any
   myFormCliente: FormGroup;
   constructor(public servc: ClientenodeService) {
-    
+
+
+    this.servc.getCliente().subscribe(r=>{
+     console.log(r.clientes[0])
+    }
+    )
   }
 
   ngOnInit(): void {
+
+
     this.obtenerClientes();
+
     this.myFormCliente = new FormGroup({
       nombreF: new FormControl(''),
+      apellidoF: new FormControl('')
     });
   }
 
   obtenerClientes(){
     this.servc.getCliente().subscribe(r=>{
-      return this.clientes=r.Clientes
+      return this.clientes=r.clientes
     })
   }
 
@@ -37,7 +46,8 @@ export class ClienteComponent implements OnInit {
 
       this.obtenerClientes()
       this.myFormCliente = new FormGroup({
-        nombreF: new FormControl('')
+        nombreF: new FormControl(''),
+        apellidoF: new FormControl('')
       })
     })
   }

@@ -1,8 +1,9 @@
 export interface Cliente{
 
-    Clientes: {
+    clientes: {
         _id ?: string,
-        nombre: string
+        nombre: string,
+        apellido: string
     },
     conteo: number
 

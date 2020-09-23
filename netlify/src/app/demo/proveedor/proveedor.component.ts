@@ -14,7 +14,7 @@ export class ProveedorComponent implements OnInit {
   myFormProveedor: FormGroup;
   constructor(public servc: ClientenodeService) {
     this.servc.getProveedor().subscribe(r=>{
-      console.table(r.proveedores);
+      console.table(r);
     })
   }
 
@@ -27,7 +27,7 @@ export class ProveedorComponent implements OnInit {
 
   obtenerProveedores(){
     this.servc.getProveedor().subscribe(r=>{
-      return this.proveedores=r.proveedores
+      return this.proveedores=r.proveedors
     })
   }
 
